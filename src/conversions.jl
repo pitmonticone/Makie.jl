@@ -30,7 +30,7 @@ end
 
 @convert_target struct Mesh
     # We currently allow Mesh and vector of meshes for the Mesh type.
-    mesh::Union{AbstractVector{<:GeometryBasics.Mesh}, GeometryBasics.Mesh}
+    mesh::Union{AbstractVector{<:GeometryBasics.AbstractMesh}, GeometryBasics.AbstractMesh}
 end
 
 @convert_target struct Volume

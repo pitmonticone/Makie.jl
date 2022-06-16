@@ -378,8 +378,8 @@ function draw_glyph_collection(scene, ctx, position, glyph_collection, rotation,
         transform_func = scene.transformation.transform_func[]
         p = Makie.apply_transform(transform_func, position)
 
-        Makie.clip_to_space(scene.camera, markerspace) * 
-        Makie.space_to_clip(scene.camera, space) * 
+        Makie.clip_to_space(scene.camera, markerspace) *
+        Makie.space_to_clip(scene.camera, space) *
         model * to_ndim(Point4f, to_ndim(Point3f, p, 0), 1)
     end
 
@@ -744,7 +744,7 @@ function draw_mesh3D(
             p_0_to_1 = (p_yflip .+ 1f0) ./ 2f0
         end
         p = p_0_to_1 .* scene.camera.resolution[]
-        return Vec3f(p[1], p[2], clip[3])
+        return Point3f(p[1], p[2], clip[3])
     end
 
     # Approximate zorder
